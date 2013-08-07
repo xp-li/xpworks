@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">工时助手</string>
+    <string name="action_settings">设置</string>
+    <string name="title_activity_main">工时助手</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="splashScreenNote">这个是闪屏</string>
+    <string name="strat_image_label">开始画面 XP Works</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+</resources>
