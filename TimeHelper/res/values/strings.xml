@@ -8,5 +8,6 @@
     <string name="splashScreenNote">这个是闪屏</string>
     <string name="strat_image_label">开始画面 XP Works</string>
     <string name="title_activity_settings">SettingsActivity</string>
+    <string name="try">试试Git</string>
 
 </resources>
