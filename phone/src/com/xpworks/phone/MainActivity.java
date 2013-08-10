@@ -28,10 +28,11 @@ public class MainActivity extends Activity {
 		public void onClick(View v) {
 			String phoneNumber =phoneNumberText.getText().toString();
 			Intent intent =new Intent();
-			intent.setAction("android.intent.cation.CALL");
+			intent.setAction("android.intent.action.CALL");
 			intent.addCategory("android.intent.category.DEFAULT");
+			//startIntent方法内部会自动添加类别category DEFAULT
 			intent.setData(Uri.parse("tel:"+phoneNumber));
-			startActivity(intent);//方法内部会自动添加类别
+			startActivity(intent);
 			
 		}
 		
