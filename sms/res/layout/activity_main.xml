@@ -10,7 +10,7 @@
 
     <TextView
         android:id="@+id/numberlabel"
-        android:layout_width="fill_parent"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text="@string/number" />
 
@@ -18,7 +18,8 @@
         android:id="@+id/number"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/numberlabel"
+        android:layout_toRightOf="@id/numberlabel"
+        android:layout_marginLeft="5dp"
         android:inputType="phone"/>
 
     <TextView
