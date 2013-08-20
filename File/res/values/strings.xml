@@ -8,5 +8,6 @@
     <string name="button">保存文件</string>
     <string name="success">保存成功</string>
     <string name="filed">保存失败</string>
+    <string name="sdcarderror"> SDCard 不存在或者写保护！</string>
 
 </resources>

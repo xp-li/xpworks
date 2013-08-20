@@ -2,6 +2,7 @@ package com.xpworks.file;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -30,8 +31,15 @@ public class MainActivity extends Activity {
 			String filecontent = filecontentText.getText().toString();
 			FileService fileService =new FileService(getApplicationContext());
 			try{
-				fileService.save(filename, filecontent);
-				Toast.makeText(getApplicationContext(), R.string.success, Toast.LENGTH_LONG).show();
+				//fileService.save(filename, filecontent);
+				//保存到SDCard,保存前需判断SD是否可用（没有或者写保护）
+				if(Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED) ){
+					fileService.saveToSDCard(filename, filecontent);
+					Toast.makeText(getApplicationContext(), R.string.success, Toast.LENGTH_LONG).show();
+				}else{
+					Toast.makeText(getApplicationContext(), R.string.sdcarderror, Toast.LENGTH_LONG).show();
+				}				
+				
 			}catch(Exception  e){ 
 				Toast.makeText(getApplicationContext(), R.string.filed, Toast.LENGTH_LONG).show();
 				e.printStackTrace();
