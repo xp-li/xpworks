@@ -25,8 +25,8 @@ public class OtherPersonService {
 		SQLiteDatabase sqLiteDatabase = dbOpenHelper.getWritableDatabase();//有数据库缓存特性
 		//容易出错
 		//String sql = "insert into person (name,phone) values ('"+person.getName()+"','"+person.getPhone()+"')";
-		String sql = "insert into person (name,phone) values (?,?)";
-		sqLiteDatabase.execSQL(sql, new Object[]{person.getName(),person.getPhone()});
+		String sql = "insert into person (name,phone) values (?,?,?)";
+		sqLiteDatabase.execSQL(sql, new Object[]{person.getName(),person.getPhone(),person.getAmount()});
 		
 	}
 	
@@ -47,8 +47,8 @@ public class OtherPersonService {
 	 */
 	public void updatePerson(Person person){
 		SQLiteDatabase sqLiteDatabase = dbOpenHelper.getWritableDatabase();	
-		String sql = "update person set name =?,phone=? where personid =?";
-		sqLiteDatabase.execSQL(sql, new Object[]{person.getName(),person.getPhone(),person.getId()});
+		String sql = "update person set name =?,phone=?,amount=? where personid =?";
+		sqLiteDatabase.execSQL(sql, new Object[]{person.getName(),person.getPhone(),person.getAmount(),person.getId()});
 	
 	}
 	
@@ -65,7 +65,8 @@ public class OtherPersonService {
 			int id = cursor.getInt(cursor.getColumnIndex("personid"));
 			String name = cursor.getString(cursor.getColumnIndex("name"));
 			String phone = cursor.getString(cursor.getColumnIndex("phone"));
-			Person person =new Person(id, name, phone);
+			int amount =cursor.getInt(cursor.getColumnIndex("amount"));			
+			Person person =new Person(id, name, phone,amount);
 			return person;
 		}
 		cursor.close();
@@ -88,7 +89,8 @@ public class OtherPersonService {
 			int id = cursor.getInt(cursor.getColumnIndex("personid"));
 			String name = cursor.getString(cursor.getColumnIndex("name"));
 			String phone = cursor.getString(cursor.getColumnIndex("phone"));
-			Person person =new Person(id, name, phone);
+			int amount =cursor.getInt(cursor.getColumnIndex("amount"));
+			Person person =new Person(id, name, phone,amount);
 			persons.add(person);
 		}
 		cursor.close();

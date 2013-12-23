@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DBOpenHelper extends SQLiteOpenHelper {
 	
 	public DBOpenHelper(Context context) {
-		super(context, "xpworks.db", null, 2);//包下的database文件夹中
+		super(context, "xpworks.db", null, 3);//包下的database文件夹中
 		 
 	}
 
@@ -16,7 +16,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 	 * 创建数据库、生成数据库表
 	 */	
 	public void onCreate(SQLiteDatabase db) {
-		String sql ="CREATE TABLE person (personid integer primary key autoincrement, name varchar(20))";
+		String sql ="CREATE TABLE person (personid integer primary key autoincrement, name varchar(20)，phone VARCHAR(12))";
 		db.execSQL(sql);
 		
 	}
@@ -26,7 +26,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 	 */
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		// TODO Auto-generated method stub
-		String sql="ALTER TABLE person ADD phone VARCHAR(12) NULL ";
+		String sql="ALTER TABLE person ADD amount integer NULL ";
 		db.execSQL(sql);
 	}
 

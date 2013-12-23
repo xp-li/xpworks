@@ -20,7 +20,7 @@ public class OtherPersonServiceTest extends AndroidTestCase {
 	
 	public void testSave() throws Exception {
 		OtherPersonService personService = new OtherPersonService(this.getContext()) ;
-		Person person = new Person("liming","1232344545");
+		Person person = new Person("liming","1232344545",100);
 		personService.addPerson(person);
 				
 	}
