@@ -7,7 +7,7 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="17" />
-
+    
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -22,9 +22,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <provider 
+            android:name="com.xpworks.db.PersonProvider"
+            android:authorities="com.xpworks.db.providers.personprovider"/>      
+             
         <uses-library android:name="android.test.runner"/>
     </application>
-    
+
     <instrumentation 
         android:name="android.test.InstrumentationTestRunner"
         android:targetPackage="com.xpworks.db"
