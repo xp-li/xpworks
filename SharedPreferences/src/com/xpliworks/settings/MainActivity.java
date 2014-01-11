@@ -4,7 +4,6 @@ import java.util.Map;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -39,13 +38,6 @@ public class MainActivity extends Activity {
 		//在Activity中获取SharedPreference对象的方法API
 		//SharedPreferences preferences = this.getPreferences(MODE_PRIVATE);
 		
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
 	}
 
 }
